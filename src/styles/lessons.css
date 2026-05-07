@@ -1,0 +1,18 @@
+.lessons-page {}
+.lessons-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.lessons-header h1 { font-family: var(--font-display); font-size: 1.8rem; }
+.filters { display: flex; gap: 0.7rem; align-items: center; }
+.filters select { width: auto; }
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+}
+.lessons-status { color: var(--text-muted); text-align: center; padding: 3rem; }

@@ -1,0 +1,54 @@
+.home { padding: 2rem 0; }
+.home-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.home-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.home-subtitle {
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+}
+.home-actions { display: flex; gap: 1rem; justify-content: center; }
+.btn-outline {
+  text-decoration: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: var(--transition);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.home-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 600px) { .home-cards { grid-template-columns: 1fr; } }
+.level-card {
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  color: var(--text);
+}
+.level-card:hover { border-color: var(--accent); background: var(--accent-light); }
+.level-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.level-card p { color: var(--text-muted); font-size: 0.9rem; }

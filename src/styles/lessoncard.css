@@ -1,0 +1,92 @@
+.lesson-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+.lesson-card:hover { border-color: #c5bfb5; }
+
+.card-top {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.card-level, .card-semester {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+.card-filetype {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #555;
+  margin-left: auto;
+}
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.card-subject { color: var(--text-muted); font-size: 0.85rem; }
+.card-filename {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-date {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  margin-top: auto;
+}
+.card-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+.btn-view, .btn-download {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn-view {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-view:hover { background: var(--accent); color: white; }
+
+.btn-download {
+  color: #2980b9;
+  border: 1px solid #2980b9;
+}
+.btn-download:hover { background: #2980b9; color: white; }
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.btn-danger:hover { background: var(--danger); color: white; }
