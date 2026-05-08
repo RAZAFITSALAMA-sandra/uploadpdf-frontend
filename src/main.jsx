@@ -6,7 +6,17 @@ import './styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Toaster position="top-right" />
+    <Toaster
+      position="top-right"
+      toastOptions={{
+        style: {
+          fontFamily: 'DM Sans, sans-serif',
+          fontSize: '0.875rem',
+          borderRadius: '10px',
+        },
+        success: { iconTheme: { primary: '#2d6e18', secondary: 'white' } },
+      }}
+    />
     <App />
   </React.StrictMode>
 );

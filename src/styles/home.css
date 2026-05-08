@@ -1,54 +1,154 @@
-.home { padding: 2rem 0; }
+.home { padding: 1rem 0 3rem; }
+
 .home-hero {
   text-align: center;
-  padding: 3rem 1rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
+  padding: 3.5rem 1rem 3rem;
+  position: relative;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
 }
 .home-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
   color: var(--text);
+  line-height: 1.15;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
+.home-title span { color: var(--accent); }
 .home-subtitle {
-  color: var(--text-muted);
-  max-width: 500px;
+  color: var(--text2);
+  max-width: 460px;
   margin: 0 auto 2rem;
   font-size: 1rem;
+  line-height: 1.7;
 }
-.home-actions { display: flex; gap: 1rem; justify-content: center; }
-.btn-outline {
+.home-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   text-decoration: none;
-  padding: 0.75rem 1.8rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  color: var(--text);
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
   font-family: var(--font-body);
   font-weight: 500;
+  font-size: 0.9rem;
   transition: var(--transition);
 }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-.home-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-@media (max-width: 600px) { .home-cards { grid-template-columns: 1fr; } }
+.btn-hero-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-hero-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.btn-hero-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-hero-secondary:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 2.5rem;
+}
+
+.home-levels-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .home-cards { grid-template-columns: 1fr; }
+  .home-hero { padding: 2rem 0.5rem 1.5rem; }
+}
+
 .level-card {
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: var(--transition);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
   color: var(--text);
 }
-.level-card:hover { border-color: var(--accent); background: var(--accent-light); }
-.level-badge {
-  display: inline-block;
+.level-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+.level-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.level-card:hover::before { transform: scaleX(1); }
+
+.level-number {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--accent);
-  margin-bottom: 0.5rem;
+  line-height: 1;
 }
-.level-card p { color: var(--text-muted); font-size: 0.9rem; }
+.level-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.level-desc {
+  font-size: 0.8rem;
+  color: var(--text2);
+}
+.level-arrow {
+  margin-top: auto;
+  font-size: 1.2rem;
+  color: var(--accent);
+  transition: transform var(--transition);
+}
+.level-card:hover .level-arrow { transform: translateX(4px); }

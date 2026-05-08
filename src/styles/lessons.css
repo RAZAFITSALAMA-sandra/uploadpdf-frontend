@@ -1,18 +1,75 @@
 .lessons-page {}
+
 .lessons-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
-.lessons-header h1 { font-family: var(--font-display); font-size: 1.8rem; }
-.filters { display: flex; gap: 0.7rem; align-items: center; }
-.filters select { width: auto; }
+.lessons-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.filters {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filters select { width: auto; min-width: 130px; }
+.filter-search {
+  flex: 1;
+  min-width: 160px;
+  max-width: 280px;
+}
+
+.lessons-count {
+  font-size: 0.82rem;
+  color: var(--text2);
+  margin-top: 0.75rem;
+}
+
 .lessons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 }
-.lessons-status { color: var(--text-muted); text-align: center; padding: 3rem; }
+
+.lessons-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text2);
+}
+.lessons-empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.lessons-empty h3 { font-size: 1rem; font-weight: 500; color: var(--text); }
+.lessons-empty p { font-size: 0.875rem; margin-top: 0.3rem; }
+
+.lessons-loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.skeleton-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  height: 180px;
+}
+.skeleton-line {
+  background: var(--bg2);
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+  animation: shimmer 1.5s infinite ease-in-out;
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@media (max-width: 640px) {
+  .lessons-header h1 { font-size: 1.5rem; }
+  .filters { flex-direction: column; align-items: stretch; }
+  .filters select, .filter-search { width: 100%; max-width: 100%; }
+  .lessons-grid { grid-template-columns: 1fr; }
+}
