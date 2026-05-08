@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: 'https://uploadpdf-3fdw.onrender.com/api',
 });
 
 export const getLessons = (filters) => API.get('/lessons', { params: filters });
